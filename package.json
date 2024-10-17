@@ -1,0 +1,47 @@
+{
+  "name": "site-empresa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx ts-node src/index.ts",
+    "db:new-migration": "ts-node src/utils/migrations/migration.gen new-migration",
+    "db:refresh": "ts-node src/utils/migrations/migration.gen refresh-mig"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.3",
+    "apollo-server": "^3.12.1",
+    "apollo-server-express": "^3.13.0",
+    "atob": "^2.1.2",
+    "axios": "^1.5.1",
+    "bcrypt": "^5.1.1",
+    "canvas": "^2.11.2",
+    "chalk": "4.1.1",
+    "date-fns": "^2.30.0",
+    "dotenv": "^16.3.1",
+    "graphql": "^15.3.0",
+    "js-base64": "^3.7.5",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.11.3",
+    "nanoid": "^3.3.4",
+    "pg": "^8.11.3",
+    "reflect-metadata": "^0.1.13",
+    "sequelize": "^6.33.0",
+    "sequelize-typescript": "^2.1.5",
+    "simple-statistics": "^7.8.3",
+    "tedious": "^16.4.0",
+    "tsimportlib": "^0.0.5",
+    "type-graphql": "^1.1.1",
+    "typedi": "^0.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.6.3",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.2.2"
+  }
+}
