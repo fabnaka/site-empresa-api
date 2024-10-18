@@ -7,14 +7,14 @@ import {
   Table,
 } from "sequelize-typescript";
 import { Field, Int, ObjectType } from "type-graphql";
-@ObjectType("GrupoParticipante")
+@ObjectType("Empresa")
 @Table({
-  modelName: "GrupoParticipante",
-  tableName: "grupo_participante",
+  modelName: "Empresa",
+  tableName: "empresa",
   updatedAt: false,
   createdAt: false,
 })
-export default class GrupoParticipante extends Model {
+export default class Empresa extends Model {
   @Field((Type) => Int)
   @PrimaryKey
   @AutoIncrement
@@ -27,13 +27,31 @@ export default class GrupoParticipante extends Model {
   @Column({
     type: DataType.STRING(255),
   })
-  descricao?: string;
+  nome?: string;
 
   @Field((Type) => String)
   @Column({
+    type: DataType.STRING(14),
+  })
+  cnpj?: string;
+
+  @Field((Type) => String, { nullable: true })
+  @Column({
     type: DataType.STRING(255),
   })
-  azure_group_id?: string;
+  endereco?: string;
+
+  @Field((Type) => String, { nullable: true })
+  @Column({
+    type: DataType.STRING(14),
+  })
+  telefone?: string;
+
+  @Field((Type) => String, { nullable: true })
+  @Column({
+    type: DataType.STRING(14),
+  })
+  email?: string;
 
   @Field((Type) => String, { nullable: true })
   @Column({

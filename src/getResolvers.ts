@@ -1,12 +1,12 @@
 import { NonEmptyArray } from "type-graphql";
 import UsuarioResolver from "./resolvers/usuario/UsuarioResolver";
-import GrupoParticipanteResolver from "./resolvers/grupo-participante/GrupoParticipanteResolver";
+import EmpresaResolver from "./resolvers/empresa/EmpresaResolver";
 
 export const getResolvers = ():
   | NonEmptyArray<Function>
   | NonEmptyArray<string> => {
   return [
     UsuarioResolver,
-    GrupoParticipanteResolver
+    EmpresaResolver
   ];
 };
