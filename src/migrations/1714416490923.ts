@@ -9,8 +9,10 @@ const MIGRATION: MigrationImpl = {
       `
       CREATE TABLE usuario (
         id INT PRIMARY KEY,
-        user VARCHAR(255) UNIQUE,
-        senha VARCHAR(255)
+        usuario VARCHAR(255) UNIQUE,
+        senha VARCHAR(255),
+        nome VARCHAR(255),
+        ativo CHAR(1)
       );            
       `,
       {

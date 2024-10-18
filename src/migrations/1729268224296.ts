@@ -5,16 +5,10 @@ import { MigrationImpl } from "../utils/migrations/interfaces";
 const MIGRATION: MigrationImpl = {
   description: 'Default description of migration',
   up: async (db: Sequelize, t: Transaction) => {
-    await db.query(`
-        CREATE TABLE empresa (
-        id INT PRIMARY KEY,
-        nome VARCHAR(255) NOT NULL,
-        cnpj VARCHAR(14) NOT NULL,
-        endereco VARCHAR(255) NOT NULL,
-        telefone VARCHAR(14) NOT NULL,
-        email VARCHAR(255) NOT NULL
-        );
-        `, {
+    await db.query(
+      `
+      INSERT INTO usuario (id, usuario, senha, nome, ativo) VALUES (1, 'master', '$2b$10$fzVR/eT2o8a85stYhIKbJOHoRI30v4Bv8GoGWnhyj0uRFDcvukL/y', 'Master', 'S')
+      `, {
       replacements: [],
       type: QueryTypes.UPDATE,
       transaction: t
@@ -22,7 +16,7 @@ const MIGRATION: MigrationImpl = {
   },
   down: async (db: Sequelize, t: Transaction) => {
     await db.query(`
-        DROP TABLE empresa`, {
+        DROP TABLE teste_migration_2`, {
       replacements: [],
       type: QueryTypes.UPDATE,
       transaction: t
