@@ -22,8 +22,8 @@ import { EmpresaDataTable, EmpresaInput, EmpresaListInput } from "../../interfac
 @Resolver((of) => Empresa)
 export default class EmpresaResolver {
   constructor(
-    private EmpresaService: any = Container.get(EmpresaService)
-  ) {}
+    private empresaService: EmpresaService = Container.get(EmpresaService)
+  ) { }
 
   //@Authorized()
   /* @UseMiddleware(CheckPerm([PERM.Empresa.Visualizar])) */
@@ -32,14 +32,14 @@ export default class EmpresaResolver {
     @Arg("filter") filter: EmpresaListInput,
     @Ctx() ctx: ContextInterface
   ) {
-    return await this.EmpresaService.filtrar(filter, ctx.usuario);
+    return await this.empresaService.filtrar(filter, ctx.usuario);
   }
 
   //@Authorized()
   /* @UseMiddleware(CheckPerm([PERM.Empresa.Visualizar])) */
   @Query(() => Empresa, { nullable: true })
   async buscarEmpresaPorId(@Arg("id", (Type) => Int) id: number) {
-    return await this.EmpresaService.porId(id);
+    return await this.empresaService.porId(id);
   }
 
 
@@ -51,7 +51,7 @@ export default class EmpresaResolver {
   })])) */
   @Mutation(() => Empresa, { nullable: true })
   async criarAlterarEmpresa(@Arg("data") data: EmpresaInput) {
-    return await this.EmpresaService.criarAlterar(data);
+    return await this.empresaService.criarAlterar(data);
   }
 
   @Authorized()

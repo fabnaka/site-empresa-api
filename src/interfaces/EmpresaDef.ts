@@ -15,7 +15,10 @@ export class EmpresaFilterInput {
   id?: PrimeFilterItemInt;
 
   @Field((type) => PrimeFilterItemString, { nullable: true })
-  descricao?: PrimeFilterItemString;
+  nome?: PrimeFilterItemString;
+
+  @Field((type) => PrimeFilterItemString, { nullable: true })
+  cnpj?: PrimeFilterItemString;
 }
 
 @InputType("EmpresaListInput")

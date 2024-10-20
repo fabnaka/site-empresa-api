@@ -52,10 +52,4 @@ export default class Empresa extends Model {
     type: DataType.STRING(14),
   })
   email?: string;
-
-  @Field((Type) => String, { nullable: true })
-  @Column({
-    type: DataType.CHAR(1),
-  })
-  ativo?: string;
 }
