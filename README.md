@@ -42,12 +42,25 @@ Para executar o projeto, utilize o seguinte comando:
    npm run start
 
 2. Ferramenta de Teste GraphQL
-Você pode utilizar a ferramenta GraphQL Playground ou o Postman para testar suas consultas e mutações (por padr   ão, na URL http://localhost:4000/graphql)
+Você pode utilizar a ferramenta GraphQL Playground ou o Postman para testar suas consultas e mutações (por padrão, na URL http://localhost:4000/graphql)
+
 
 ## Exemplos de Consultas e Mutações 
 
 Consultas
-1. Obter todas as empresas:
+1. Para efetuar o login na aplicação e obter o bearer token:
+   ```bash
+   query Login {
+      login(data: {usuario: "master", senha: "123456"}) {
+         usuario
+         nome
+         token
+      }
+   }
+
+
+
+2. Obter todas as empresas:
    ```bash
    query ListarEmpresa {
       listarEmpresa {
@@ -60,7 +73,7 @@ Consultas
       }
    }
 
-2. Obter a empresa por ID:
+3. Obter a empresa por ID:
    ```bash
    query BuscarEmpresaPorId {
       buscarEmpresaPorId(id: 1) {
@@ -75,7 +88,7 @@ Consultas
 
 Mutações
 
-3. Adicionar uma empresa:
+4. Adicionar uma empresa:
    ```bash
    mutation CriarAlterarEmpresa {
       criarAlterarEmpresa(data: {nome: "teste", cnpj: "11111111111", endereco: "teste", telefone: "123", email: "teste@gmail.com"}) {
@@ -88,7 +101,7 @@ Mutações
       }
    }
 
-4. Modificar uma empresa:
+5. Modificar uma empresa:
    ```bash
    mutation CriarAlterarEmpresa {
       criarAlterarEmpresa(data: {id: 2, nome: "teste2"}) {
@@ -101,7 +114,7 @@ Mutações
       }
    }
 
-5. Excluir uma empresa:
+6. Excluir uma empresa:
    ```bash
    mutation CriarAlterarEmpresa {
       criarAlterarEmpresa(data: {id: 1, ativo: "N"}) {
