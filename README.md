@@ -76,6 +76,7 @@ Consultas
    }
 
 Mutações
+
 3. Adicionar uma empresa:
    ```bash
    mutation CriarAlterarEmpresa {
