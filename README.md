@@ -58,8 +58,6 @@ Consultas
       }
    }
 
-
-
 2. Obter todas as empresas:
    ```bash
    query ListarEmpresa {
