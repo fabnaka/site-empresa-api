@@ -7,8 +7,6 @@ Projeto de apresentação utilizando Node, Express, GraphQL, Sequelize e MySQL.
 - [Instalação](#instalação)
 - [Uso](#uso)
 - [Exemplos de Consultas e Mutações](#exemplos-de-consultas-e-mutações)
-- [Contribuição](#contribuição)
-- [Licença](#licença)
 
 ## Instalação
 
@@ -44,7 +42,7 @@ Para executar o projeto, utilize o seguinte comando:
    npm run start
 
 2. Ferramenta de Teste GraphQL
-Você pode utilizar a ferramenta GraphQL Playground ou o Postman para testar suas consultas e mutações (por padrão, na URL http://localhost:4000/graphql)
+Você pode utilizar a ferramenta GraphQL Playground ou o Postman para testar suas consultas e mutações (por padr   ão, na URL http://localhost:4000/graphql)
 
 ## Exemplos de Consultas e Mutações 
 
