@@ -5,15 +5,11 @@ import {
   Int,
   Mutation,
   Query,
-  Resolver,
-  UseMiddleware,
+  Resolver
 } from "type-graphql";
 import Container, { Service } from "typedi";
 import { ContextInterface } from "../../types";
-import { Transaction } from "sequelize/types";
-import { sequelize } from "../..";
 
-import CrudUtils from "../../utils/primeng/CrudUtils";
 import Empresa from "../../models/Empresa";
 import { EmpresaService } from "./EmpresaService";
 import { EmpresaDataTable, EmpresaInput, EmpresaListInput } from "../../interfaces/EmpresaDef";
@@ -25,7 +21,7 @@ export default class EmpresaResolver {
     private empresaService: EmpresaService = Container.get(EmpresaService)
   ) { }
 
-  //@Authorized()
+  @Authorized()
   /* @UseMiddleware(CheckPerm([PERM.Empresa.Visualizar])) */
   @Query(() => EmpresaDataTable, { nullable: true })
   async filtrarEmpresa(
@@ -35,7 +31,7 @@ export default class EmpresaResolver {
     return await this.empresaService.filtrar(filter, ctx.usuario);
   }
 
-  //@Authorized()
+  @Authorized()
   /* @UseMiddleware(CheckPerm([PERM.Empresa.Visualizar])) */
   @Query(() => Empresa, { nullable: true })
   async buscarEmpresaPorId(@Arg("id", (Type) => Int) id: number) {
